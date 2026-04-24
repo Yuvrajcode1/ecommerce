@@ -19,7 +19,7 @@ const Navbar = ({ adress,getadress,locationpopup,setlocationpopup }) => {
         {/* navbar area */}
         <div className='fixed z-10 bg-white shadow-2xl shadow-black h-9 w-full flex justify-between items-center px-3 py-5'>
           <div className='flex gap-12 justify-between items-center'>
-            <Link to="/"><h1 className='text-xl font-serif ml-4 text-blue-500'><span className='text-red-600 font-semibold text-3xl'>S</span>alva</h1></Link>
+            <Link to="/"><h1 className='text-xl font-serif ml-4 text-blue-500'><span className='text-red-600 font-semibold text-3xl'>Y</span>uvraj</h1></Link>
             {/* map and adress */}
             <div className='hidden md:flex justify-center items-center ml-3 relative'>
               <MapPin className='text-red-700 size-5' />
