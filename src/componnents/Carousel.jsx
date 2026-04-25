@@ -25,16 +25,26 @@ const Carousel = () => {
        {
         products?.slice(5,15)?.map((product,idx)=>(
            <SwiperSlide className=''>
-          <div className='bg-blue-400 w-full md:h-130 flex flex-col md:flex-row justify-around items-center'>
-             <div className='h-85 w-100 bg- flex flex-col justify-center items-center'>
+          <div className=' bg-blue-400 w-full md:h-130 flex flex-col md:flex-row justify-around items-center'>
+             <div className='h-80 w-100 bg- flex flex-col justify-center items-center'>
               <h1 className='text-center uppercase font-bold text-purple-800 mt-3 md:text-xl text-sm'>{product.title}</h1>
               <h2 className='text-justify line-clamp-2 md:line-clamp-none text-sm font-semibold'>{product.description}</h2>
               <h2 className='text-red-800 text-lg mt-15'><span className='text-xl text-white  font-semibold'>Price:-</span>{product.price}</h2>
               <h2 className='text-red-800 text-2xl'><span className='text-xl text-blue-950  font-semibold'>Discount up To:-</span>{product.discountPercentage}%</h2>
+              <button className='mt-5 left-3 top-70 bg-red-700 text-white font-semibold rounded-lg px-1 pb-0.5 text-center'>Shop now</button>
              </div>
              <div className='w-85 h-85 shadow-2xl mb-5 md:mb-0 shadow-red-500 rounded-full flex justify-center items-center bg-blue-900'>
             <img className='h-80 w-80 bg-white rounded-full mb-3 shadow-2xl shadow-white object-cover' src={product.images[1]} alt="products" />
              </div>
+             <div>
+             </div>
+          </div>
+          <div className='mt-1 bg-red-400 flex justify-between items-center'>
+            {
+              products?.slice(5,15)?.map((product,idx)=>(
+                <button className='bg-green-500 text-white rounded-lg px-1 pb-0.5'>{product.category}</button>
+           ))
+            }
           </div>
         </SwiperSlide>
         ))
