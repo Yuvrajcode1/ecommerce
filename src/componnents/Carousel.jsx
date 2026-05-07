@@ -6,21 +6,22 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 // import axios from 'axios';
 import { Slice } from 'lucide-react';
-import { Datacontext } from './Datacontext';
+import { Data, Datacontext } from './Datacontext';
+import Catagory from './catagory';
 
 // https://dummyjson.com/products?limit=100
 
 const Carousel = () => {
   // const [products,setproducts]=useState([])
-  const {getproduct,products}=useContext(Datacontext)
+  const {getproduct,products}=Data()
  
   useEffect(()=>{
     getproduct();
   },[])
-  console.log(products);
+  // console.log(products);
   
   return (
-    <div className='bg-amber-400 w-full md:h-130'>
+    <div className='w-full md:h-130'>
       <Swiper spaceBetween={70} breakpoints={{768:{slidesPerView:1},640:{slidesPerView:1},0:{slidesPerView:1},}} navigation={true} pagination={{clickable:true}} autoplay={{delay:800,}} modules={[Navigation,Pagination,Autoplay]}>
        {
         products?.slice(5,15)?.map((product,idx)=>(
@@ -28,7 +29,7 @@ const Carousel = () => {
           <div className=' bg-blue-400 w-full md:h-130 flex flex-col md:flex-row justify-around items-center'>
              <div className='h-80 w-100 bg- flex flex-col justify-center items-center'>
               <h1 className='text-center uppercase font-bold text-purple-800 mt-3 md:text-xl text-sm'>{product.title}</h1>
-              <h2 className='text-justify line-clamp-2 md:line-clamp-none text-sm font-semibold'>{product.description}</h2>
+              <h2 className='text-justify line-clamp-2 md:line-clamp-none text-sm px-2 font-semibold'>{product.description}</h2>
               <h2 className='text-red-800 text-lg mt-15'><span className='text-xl text-white  font-semibold'>Price:-</span>{product.price}</h2>
               <h2 className='text-red-800 text-2xl'><span className='text-xl text-blue-950  font-semibold'>Discount up To:-</span>{product.discountPercentage}%</h2>
               <button className='mt-5 left-3 top-70 bg-red-700 text-white font-semibold rounded-lg px-1 pb-0.5 text-center'>Shop now</button>
@@ -38,17 +39,13 @@ const Carousel = () => {
              </div>
              <div>
              </div>
-          </div>
-          <div className='mt-1 bg-red-400 flex justify-between items-center'>
-            {
-              products?.slice(5,15)?.map((product,idx)=>(
-                <button className='bg-green-500 text-white rounded-lg px-1 pb-0.5'>{product.category}</button>
-           ))
-            }
+             <div className='absolute bottom-0 w-full'> 
+          <Catagory/>
+             </div>
           </div>
         </SwiperSlide>
         ))
-       }
+      }
       </Swiper>
     </div>
   )

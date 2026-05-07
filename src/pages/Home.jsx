@@ -23,6 +23,7 @@ const Home = () => {
     <div className='mt-2'>
       <Carousel/>
     </div>
+    
     </>
   )
 }

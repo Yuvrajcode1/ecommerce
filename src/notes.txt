@@ -1,0 +1,42 @@
+#e-commerce (salva) website code process
+
+sabse pehle src ke under 2 folder bnaya gya hai
+1.componnents
+2.pages
+ 
+ componnets ke under ek file bna hai navbar.jsx 
+ phir navbar ke liye pages bnaya gya hai
+ home,about,contact,product etc
+
+ uske bad navbar me navbar ka design kiya gya hai or router ka use kiya gya hai.
+ phir navbar ko App.jsx ke under import kiya gya hai or phir sbhi pages ko bhi routes ke under import kiya gya
+ hai jiske karan click krne pe wo wali page open hoti hai.
+
+ navbar ke under location ko lgane ke liye ek getadress nam ka function bnaya gya hai jiske under
+ 1. navigat krke latitude or longitude ko liya gya hai.
+ 2.latitude or longitude ko ek api me set kiya gya hai jo kuch aise hai
+ const url=`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+ 3.uske bad adress ko adress nam ke state ke under store kiya gya hai
+ 4. adress or getadress ko navbar ke ander props ke through navbar wale componnet me bheja gya hai or usko
+ ui pr display kraya gya hai
+
+phir authentigetion ke liye navbar ke under third parti ka use kiya gya hai jiska nam clerk hai
+
+#Home page bnane ka process.
+
+home page me ek carausel bnaya gya hai, crausel bnane ke liye 
+ 1.swiper ka use kiya gya hai 
+ 2. swiper me product dikhne ke liye ek Datacontext nam ka file componnets me bnaya ya hai 
+ 3. datacontext me ek getproduct name ka function bnaya gya hai jiske under ek dummyjson se ek api call kiya gya hai 
+ "https://dummyjson.com/products?limit=100"
+ 4. phir products nam ke state ke under us api ke product ko store kiya gya hai
+ 5.phir dataprovider me value return kiya gya hai jisme products,setproducts or getproduct ko pass kiya gya hai 
+ 6. phir datacontex ke under ek data anme se custom hook bnaya gya hai or usme datacontext ko store kr diya gya 
+ hai jiske karan hm kisi bhi page me easily products ko get kr ske 
+ 7.phir carausel ke under data name wale custome hook se products name wale state ko or getproduct name wale fuction 
+ ko import krke getproduct wale function ko call kr liya hai.
+ 8.phir swiper ke under map chala kr product ko ui pe display kra diya gya hai 
+ 9.phir carausel ko home.jsx ke under import kra ke home page pe product wala slider dikha diya gya hai
+ 10.carausel me alag alag category ka button dikhane ke liye ek category.jsx name se file bnaya or usme product
+ ko map or set ka use krke uniqe category nikala or fir carausel wale componnet me button me dal diya or ye 
+ sirf md or lg screen pe hi dikhega.

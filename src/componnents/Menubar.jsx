@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink ,Link } from 'react-router'
+import { NavLink ,Link } from 'react-router-dom'
 import { IoClose } from "react-icons/io5";
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
 

@@ -40,11 +40,11 @@ const Navbar = ({ adress,getadress,locationpopup,setlocationpopup }) => {
           </div>
           {/* products pages */}
           <nav className='flex justify-center items-center gap-7'>
-            <ul className='hidden md:flex gap-7 justify-center items-center '>
-              <NavLink to={"/"} className={({ isActive }) => `${isActive ? "border-b-2 border-red-600 font-bold" : "text-black"}`}><li>Home</li></NavLink>
-              <NavLink to={"/Product"} className={({ isActive }) => `${isActive ? "border-b-2 border-red-600 font-bold" : "text-black"}`}><li>Products</li></NavLink>
-              <NavLink to={"/About"} className={({ isActive }) => `${isActive ? "border-b-2 border-red-600 font-bold" : "text-black"}`}><li>About</li></NavLink>
-              <NavLink to={"/Contact"} className={({ isActive }) => `${isActive ? "border-b-2 border-red-600 font-bold" : "text-black"}`}><li>Contact</li></NavLink>
+            <ul className='hidden md:flex gap-7 justify-center items-center '> 
+              <NavLink to="/" className={({ isActive }) => `${isActive ? "border-b-2 border-red-600 font-bold" : "text-black"}`}><li>Home</li></NavLink>
+              <NavLink to="/Product" className={({ isActive }) => `${isActive ? "border-b-2 border-red-600 font-bold" : "text-black"}`}><li>Products</li></NavLink>
+              <NavLink to="/About" className={({ isActive }) => `${isActive ? "border-b-2 border-red-600 font-bold" : "text-black"}`}><li>About</li></NavLink>
+              <NavLink to="/Contact" className={({ isActive }) => `${isActive ? "border-b-2 border-red-600 font-bold" : "text-black"}`}><li>Contact</li></NavLink>
             </ul>
             {/* cart icon */}
             <div className='flex relative'>
@@ -54,12 +54,12 @@ const Navbar = ({ adress,getadress,locationpopup,setlocationpopup }) => {
               </Link>
             </div>
             {/* sign in button */}
-            <div className=''>
+            <div className='mt-1'>
               <Show when="signed-out">
                 <SignInButton className="bg-blue-500 px-2 pb-1 rounded-lg text-center"/>
               </Show>
               <Show when="signed-in">
-                <UserButton />
+                <UserButton className="" />
               </Show>
             </div>
             {/* <Link to={"/Menubar"}><IoIosMenu className='size-6 md:hidden' /></Link> */}

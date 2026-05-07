@@ -33,7 +33,7 @@ catch(err){
 useEffect(()=>{
   getadress();
 },[])
-console.log(adress)
+// console.log(adress)
   return (
     <>
       {/* Navbar div */}
@@ -44,11 +44,11 @@ console.log(adress)
       {/* pages div */}
       <div>
           <Routes>
-            <Route path="/"element={<Home/>}></Route>
-            <Route path="/Product"element={<Product/>}></Route>
-            <Route path="/About"element={<About/>}></Route>
-            <Route path="/Contact"element={<Contact/>}></Route>
-            <Route path="/Menubar" element={<Menubar/>}></Route>
+            <Route path="/" element={<Home/>} />
+            <Route path="/Product" element={<Product/>} />
+            <Route path="/About" element={<About/>} />
+            <Route path="/Contact" element={<Contact/>} />
+            <Route path="/Menubar" element={<Menubar/>} />
           </Routes>
       </div>
 
