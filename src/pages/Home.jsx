@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Carousel from '../componnents/Carousel';
+import PromoSection from '../componnents/Promosection';
 const Home = () => {
 
   return (
@@ -22,6 +23,7 @@ const Home = () => {
     </Swiper> */}
     <div className='mt-2'>
       <Carousel/>
+      <PromoSection/>
     </div>
     
     </>
