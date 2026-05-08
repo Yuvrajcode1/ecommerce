@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Menubar from "./componnents/Menubar";
 import Mobilemenu from "./componnents/Mobilemenu";
+import Footer from "./componnents/Footer";
 
 const App = () => {
 const [adress,setadress]=useState()
@@ -51,7 +52,7 @@ useEffect(()=>{
             <Route path="/Menubar" element={<Menubar/>} />
           </Routes>
       </div>
-
+      <Footer/>
       <div className="">
        <Mobilemenu/>
       </div>

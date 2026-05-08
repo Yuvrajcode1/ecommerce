@@ -21,7 +21,8 @@ const Carousel = () => {
   // console.log(products);
   
   return (
-    <div className='w-full md:h-130'>
+    <> 
+   <div className='w-full md:h-130'> 
       <Swiper spaceBetween={70} breakpoints={{768:{slidesPerView:1},640:{slidesPerView:1},0:{slidesPerView:1},}} navigation={true} pagination={{clickable:true}} autoplay={{delay:800,}} modules={[Navigation,Pagination,Autoplay]}>
        {
         products?.slice(5,15)?.map((product,idx)=>(
@@ -48,6 +49,7 @@ const Carousel = () => {
       }
       </Swiper>
     </div>
+    </>
   )
 }
 
