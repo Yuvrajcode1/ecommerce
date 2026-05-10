@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <>
     {
-   products?<footer className="bg-black text-white py-10 mt-10">
+   products?<footer className="bg-black text-white py-10 ">
       <div className="max-w-7xl mx-auto px-5 grid md:grid-cols-3 gap-8">
 
         {/* Logo & About */}

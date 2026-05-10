@@ -20,7 +20,7 @@ useEffect(()=>{
     products?<div className='mt-2'>
       <Carousel/>
       <PromoSection/>
-    </div>:<div className=' w-full h-screen flex items-center justify-center'><img src="https://i.pinimg.com/originals/f6/65/6a/f6656aa6fdb6b8f905dea0bcc2d71dd8.gif" alt="" /></div>
+    </div>:<div className=' w-full h-screen flex items-center justify-center'><img src="https://i.pinimg.com/originals/f6/65/6a/f6656aa6fdb6b8f905dea0bcc2d71dd8.gif" alt="Loading..." /></div>
   }
     </>
   )
