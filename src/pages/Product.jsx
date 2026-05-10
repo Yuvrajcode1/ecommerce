@@ -10,7 +10,7 @@ const Product = () => {
   },[])
   console.log(products);
   return (
-    <div className=''>
+    <div className=' mt-2'>
       {
       products?<div className='flex h-screen justify-center items-center'>
         <div className='w-[20%]  h-screen sticky top-0'><ProductFilter/></div>
