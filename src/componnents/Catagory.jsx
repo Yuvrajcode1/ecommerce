@@ -3,18 +3,10 @@ import React, { useEffect } from 'react'
 import { Data } from './Datacontext'
 
 const Catagory = () => {
-    const {products,getproduct}=Data()
+    const {products,getproduct,category}=Data()
     useEffect(()=>{
         getproduct()
     },[])
-
-    const getuniqecategory=(product,property)=>{
-      let newval=product?.map((item)=>item[property])
-      newval=[...new Set(newval)]
-      return newval;
-    }
-     let category=getuniqecategory(products,"category");
-    console.log("hello");
   return (
     <div className='w-full hidden md:flex justify-around items-center'>
       {

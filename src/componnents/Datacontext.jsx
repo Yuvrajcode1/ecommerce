@@ -15,8 +15,15 @@ export const Dataprovider=({children})=>{
        console.log(err);
     }
   }
+  const getuniqecategory=(product,property)=>{
+      let newval=product?.map((item)=>item[property])
+      newval=["All",...new Set(newval)]
+      return newval;
+    }
+     let category=getuniqecategory(products,"category");
+     let brand=getuniqecategory(products,"brand");
 
-    return <Datacontext.Provider value={{products,setproducts,getproduct}}>
+    return <Datacontext.Provider value={{products,setproducts,getproduct,category,brand}}>
      {children}
     </Datacontext.Provider>
 }
