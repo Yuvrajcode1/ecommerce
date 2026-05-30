@@ -6,14 +6,17 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 // import axios from 'axios';
 import { Slice } from 'lucide-react';
-import { Data, Datacontext } from './Datacontext';
+import { Data} from './Datacontext';
 import Catagory from './catagory';
+import { Carts } from './Cartcontext';
+import { useNavigate } from 'react-router';
 
 // https://dummyjson.com/products?limit=100
 
 const Carousel = () => {
   // const [products,setproducts]=useState([])
   const {getproduct,products}=Data()
+  const navigate=useNavigate()
  
   useEffect(()=>{
     getproduct();
@@ -33,15 +36,15 @@ const Carousel = () => {
               <h2 className='text-justify line-clamp-2 md:line-clamp-none text-sm px-2 font-semibold'>{product.description}</h2>
               <h2 className='text-red-800 text-lg mt-15'><span className='text-xl text-white  font-semibold'>Price:-</span>{product.price}</h2>
               <h2 className='text-red-800 text-2xl'><span className='text-xl text-blue-950  font-semibold'>Discount up To:-</span>{product.discountPercentage}%</h2>
-              <button className='mt-5 left-3 top-70 bg-red-700 text-white font-semibold rounded-lg px-1 pb-0.5 text-center'>Shop now</button>
+              <button onClick={()=>navigate(`/product/${product.id}`)} className='mt-5 left-3 top-70 bg-red-700 text-white font-semibold rounded-lg px-1 pb-0.5 text-center'>Shop now</button>
              </div>
              <div className='w-85 h-85 shadow-2xl mb-5 md:mb-0 shadow-red-500 rounded-full flex justify-center items-center bg-blue-900'>
-            <img className='h-80 w-80 bg-white rounded-full mb-3 shadow-2xl shadow-white object-cover' src={product.images[1]} alt="products" />
+            <img onClick={()=>navigate(`/product/${product.id}`)} className='h-80 w-80 bg-white rounded-full mb-3 shadow-2xl shadow-white object-cover' src={product.images[1]} alt="products" />
              </div>
              <div>
              </div>
              <div className='absolute bottom-0 w-full'> 
-          <Catagory/>
+          {/* <Catagory/> */}
              </div>
           </div>
         </SwiperSlide>

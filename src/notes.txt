@@ -40,3 +40,6 @@ home page me ek carausel bnaya gya hai, crausel bnane ke liye
  10.carausel me alag alag category ka button dikhane ke liye ek category.jsx name se file bnaya or usme product
  ko map or set ka use krke uniqe category nikala or fir carausel wale componnet me button me dal diya or ye 
  sirf md or lg screen pe hi dikhega.
+
+who componnents does not use
+1.ProductFilter.jsx

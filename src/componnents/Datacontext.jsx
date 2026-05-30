@@ -22,8 +22,15 @@ export const Dataprovider=({children})=>{
     }
      let category=getuniqecategory(products,"category");
      let brand=getuniqecategory(products,"brand");
-
-    return <Datacontext.Provider value={{products,setproducts,getproduct,category,brand}}>
+// nnnnnnnnnn
+     const [searchval,setsearchval]=useState('')
+     const [category1,setcategory1]=useState('All')
+     const [brand1,setbrand1]=useState('All')
+     const [pricerange,setpricerange]=useState([0,1000])
+      
+     
+// nnnnnnnnnnn
+    return <Datacontext.Provider value={{products,setproducts,getproduct,category,brand,searchval,setsearchval,category1,setcategory1,brand1,setbrand1,pricerange,setpricerange}}>
      {children}
     </Datacontext.Provider>
 }

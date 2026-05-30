@@ -2,22 +2,24 @@ import { MapPin } from 'lucide-react';
 import { IoMdArrowDropdown, IoMdClose,IoIosMenu } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
+import { Carts } from './Cartcontext';
 // import { SignedOut } from '@clerk/clerk-react';
 
 
 const Navbar = ({ adress,getadress,locationpopup,setlocationpopup }) => {
-  // const [locationpopup, setlocationpopup] = useState(false)
+const {Cartitem}=Carts()
 
   function popup() {
     setlocationpopup(!locationpopup)
   }
+//  console.log(adress.city);
   return (
     <>
       <div className='max-w-full h-8 bg-white'>
         {/* navbar area */}
-        <div className='fixed z-10 bg-white shadow-2xl shadow-black h-9 w-full flex justify-between items-center px-3 py-5'>
+        <div className='fixed z-10 bg-white shadow-2xl shadow-black h-12 w-full flex justify-between items-center px-3 py-5'>
           <div className='flex gap-12 justify-between items-center'>
             <Link to="/"><h1 className='text-xl font-serif ml-4 text-blue-500'><span className='text-red-600 font-semibold text-3xl'>S</span>alva</h1></Link>
             {/* map and adress */}
@@ -48,15 +50,15 @@ const Navbar = ({ adress,getadress,locationpopup,setlocationpopup }) => {
             </ul>
             {/* cart icon */}
             <div className='flex relative'>
-              <Link>
-                <FaShoppingCart className='size-4.5' />
-                <span className='absolute -top-2 left-4.5 font-bold text-sm  text-red-700 '>{"3"}</span>
+              <Link to="/Cart">
+                <FaShoppingCart  className='size-4.5'/>
+                <span className='absolute -top-2 left-4.5 font-bold text-sm  text-red-700 '>{Cartitem.length}</span>
               </Link>
             </div>
             {/* sign in button */}
             <div className='mt-1'>
               <Show when="signed-out">
-                <SignInButton className="bg-blue-500 px-2 pb-1 rounded-lg text-center"/>
+                <SignInButton className="bg-blue-500 px-2 py-1 text-white rounded-lg text-center"/>
               </Show>
               <Show when="signed-in">
                 <UserButton className="" />
