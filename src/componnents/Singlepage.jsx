@@ -19,7 +19,7 @@ const fetchsingleProduct=async()=>{
 useEffect(()=>{
         fetchsingleProduct()
     },[])
-    console.log(SingleProduct)
+    
   return (
     <>
     <div className=' mt-6'>

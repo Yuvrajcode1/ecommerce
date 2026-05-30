@@ -5,11 +5,11 @@ import React, { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router';
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
 import { Carts } from './Cartcontext';
-// import { SignedOut } from '@clerk/clerk-react';
 
 
 const Navbar = ({ adress,getadress,locationpopup,setlocationpopup }) => {
 const {Cartitem}=Carts()
+
 
   function popup() {
     setlocationpopup(!locationpopup)

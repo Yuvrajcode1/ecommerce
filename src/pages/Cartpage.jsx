@@ -3,22 +3,23 @@ import React, { useState } from 'react'
 import { Carts } from '../componnents/Cartcontext'
 import { useNavigate } from 'react-router'
 import { MdDelete } from "react-icons/md";
+import { useUser } from '@clerk/react';
 
 const Cartpage = ({adress,getadress}) => {
   const { Cartitem,setCartitem } = Carts();
   const navigate = useNavigate();
   const [location,setlocation]=useState([])
+  const [fullname,setfullname]=useState("")
+const {user}=useUser()
+console.log(user);
 
-//  let country1="";
-//  let state1="";
-//  let postcode1="";
-//  let city1="";
   const Detectlocation=()=>{
    let country1=adress.country;
    let state1=adress.state;
    let postcode1=adress.postcode;
    let city1=adress.city;
   setlocation({country1,state1,postcode1,city1})  
+  setfullname(user.fullName);
   }
 
  let total=0;
@@ -68,7 +69,7 @@ setCartitem(filter)
                <div className=' mt-3 flex flex-col gap-5'>
                 <div className='flex flex-col'>
                   <label htmlFor="name">Full Name</label>
-                  <input type="text" placeholder='Enter your Name' id='name' className=' w-full rounded-md border border-gray-500 p-2 outline-0' />
+                  <input type="text" placeholder='Enter your Name' id='name' value={fullname} className=' w-full rounded-md border border-gray-500 p-2 outline-0' />
                 </div>
                 <div>
                   <label htmlFor="address">Address</label>
